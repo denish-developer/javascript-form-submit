@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms TutorIALS</h2>
+
+<form class="form">
+  Purchanse amount:<br>
+  <input type="number"" class="pamount">
+  <br>
+  Discount:<br>
+  <input type="number"  id="discount">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+<script>
+    // console.log(new Date().getMonth());
+    const form = document.querySelector('form');
+    const pamount = form.querySelector('.pamount');
+            form.addEventListener('submit', checkDiscount);
+            function checkDiscount(e){
+                e.preventDefault();
+                var discountAmount = 0;
+                if(pamount > 2000){
+                    discountAmount = pamount.value * 0.05;
+                }else if (pamount > 1000){
+                     discountAmount = pamount.value * 0.03;
+                }
+                else{
+                    discountAmount = pamount.value * 0.02;
+                }           
+                document.getElementById("discount").value = discountAmount;
+               
+            }
+
+            var day = new Date().getMonth();
+           
+
+        
+
+
+</script>
+</html>
